@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%E2%9C%8A%F0%9F%8F%BF%3C/text%3E%3C/svg%3E">
+<title>Eu Me Declaro · Consciência Negra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF3E6; --surface:#FFFFFF; --ink:#24140B; --muted:#6E5646; --line:rgba(36,20,11,.16);
+  --terra:#C8553D; --gold:#E9A820; --green:#2F7D4F; --plum:#6B2D5C; --on-accent:#fff;
+  --glow1:rgba(233,168,32,.28); --glow2:rgba(200,85,61,.22);
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#140D08; --surface:#1F140D; --ink:#FBF0DE; --muted:#C2A894; --line:rgba(251,240,222,.18);
+    --terra:#E7735A; --gold:#F2BB3C; --green:#4CAF78; --plum:#B063A0; --on-accent:#140D08;
+    --glow1:rgba(242,187,60,.18); --glow2:rgba(231,115,90,.16);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#140D08; --surface:#1F140D; --ink:#FBF0DE; --muted:#C2A894; --line:rgba(251,240,222,.18);
+  --terra:#E7735A; --gold:#F2BB3C; --green:#4CAF78; --plum:#B063A0; --on-accent:#140D08;
+  --glow1:rgba(242,187,60,.18); --glow2:rgba(231,115,90,.16);
+}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0; min-height:100%; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); line-height:1.55; display:flex; flex-direction:column;
+  background-image:
+    radial-gradient(60rem 30rem at 85% -10%, var(--glow1), transparent 60%),
+    radial-gradient(50rem 28rem at -10% 20%, var(--glow2), transparent 60%);
+  background-attachment:fixed;
+}
+.tape{height:8px; background:linear-gradient(90deg,#FFF6EC 0%,#F7DCC2 14%,#E8BE96 28%,#CD9B6B 42%,#A8703F 56%,#7A4E32 70%,#46291A 85%,#150B06 100%)}
+header{display:flex; align-items:center; justify-content:flex-end; gap:1rem; padding:1.25rem clamp(1.25rem,5vw,4rem)}
+.brand{display:flex; align-items:center; gap:.7rem; font-weight:700; letter-spacing:.02em}
+.mark{width:2.2rem; height:2.2rem; border-radius:50%; position:relative; background:conic-gradient(var(--terra),var(--gold),var(--green),var(--plum),var(--terra))}
+.mark::after{content:""; position:absolute; inset:.5rem; border-radius:50%; background:var(--bg)}
+.date{font-size:.85rem; color:var(--muted); border:1px solid var(--line); padding:.35rem .9rem; border-radius:999px; white-space:nowrap}
+main{flex:1; padding:clamp(1rem,4vw,3rem) clamp(1.25rem,5vw,4rem) 3rem}
+.wrap{max-width:58rem; margin:0 auto}
+.kicker{display:inline-flex; align-items:center; gap:.6rem; font-size:.8rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--terra)}
+.kicker::before{content:""; width:2.2rem; height:2px; background:currentColor}
+h1{font-family:var(--serif); font-weight:800; font-size:clamp(2.2rem,6.5vw,4.2rem); line-height:1.02; letter-spacing:-.025em; margin:.9rem 0 1rem}
+h1 em{font-style:italic; font-weight:500; background:linear-gradient(90deg,var(--terra),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.lead{font-size:clamp(1rem,2.2vw,1.2rem); color:var(--muted); max-width:38rem; margin:0}
+.privacy{display:flex; gap:.8rem; align-items:flex-start; margin:1.6rem 0 2.2rem; padding:1rem 1.2rem; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:1rem; background:var(--surface); color:var(--muted); font-size:.95rem}
+.privacy b{color:var(--ink)}
+fieldset{border:0; padding:0; margin:0 0 2.6rem; min-width:0}
+legend{padding:0; margin-bottom:1.1rem; display:flex; align-items:center; gap:.8rem; font-family:var(--serif); font-weight:800; font-size:clamp(1.35rem,3.4vw,1.8rem); line-height:1.2}
+.num{flex:none; width:2.2rem; height:2.2rem; border-radius:50%; display:grid; place-items:center; font-family:var(--sans); font-size:.95rem; font-weight:700; background:var(--ink); color:var(--bg)}
+.hint{margin:-.4rem 0 1.1rem; color:var(--muted); font-size:.95rem}
+.grid{display:grid; gap:.8rem}
+.race{grid-template-columns:repeat(auto-fit,minmax(10rem,1fr))}
+.gender{grid-template-columns:repeat(auto-fill,minmax(13rem,1fr))}
+.opt{position:relative}
+.opt input{position:absolute; opacity:0; inset:0; width:100%; height:100%; margin:0; cursor:pointer; z-index:1}
+.card{
+  display:flex; align-items:center; gap:.8rem; min-height:3.6rem; padding:.9rem 1.1rem;
+  background:var(--surface); border:2px solid var(--line); border-radius:1rem;
+  font-weight:500; transition:transform .15s, border-color .15s, box-shadow .15s, background .15s;
+}
+.race .card{flex-direction:column; justify-content:center; text-align:center; min-height:7.5rem; font-family:var(--serif); font-size:1.5rem; font-weight:800; gap:.5rem}
+.dot{width:.9rem; height:.9rem; border-radius:50%; background:var(--d,var(--c)); box-shadow:inset 0 0 0 1.5px rgba(128,128,128,.4); flex:none}
+.race .dot{width:1.6rem; height:1.6rem}
+.opt:hover .card{transform:translateY(-2px); border-color:var(--c)}
+.opt input:focus-visible + .card{outline:3px solid var(--gold); outline-offset:3px}
+.opt input:checked + .card{border-color:var(--c); background:color-mix(in srgb,var(--c) 14%,var(--surface)); box-shadow:0 6px 0 -2px var(--c)}
+.opt input:checked + .card .dot{box-shadow:inset 0 0 0 1.5px rgba(128,128,128,.4), 0 0 0 4px color-mix(in srgb,var(--c) 30%,transparent)}
+.race .card{background:var(--g); color:var(--t); border-color:transparent; min-height:9.5rem; position:relative; overflow:hidden; box-shadow:0 14px 24px -14px rgba(36,20,11,.55)}
+.race .card::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 20% 0%,rgba(255,255,255,.35),transparent 55%); pointer-events:none}
+.race .dot{display:none}
+.race .opt:hover .card{border-color:transparent; transform:translateY(-4px) scale(1.02)}
+.race .opt input:checked + .card{background:var(--g); border-color:transparent; box-shadow:0 0 0 3px var(--bg), 0 0 0 6px var(--ink), 0 16px 26px -12px rgba(36,20,11,.6); transform:translateY(-4px)}
+.race .card::after{content:"✓"; position:absolute; top:.7rem; right:.7rem; width:1.8rem; height:1.8rem; border-radius:50%; display:grid; place-items:center; font-family:var(--sans); font-size:1rem; font-weight:700; background:var(--ink); color:var(--bg); opacity:0; transform:scale(.4); transition:opacity .15s, transform .15s}
+.race .opt input:checked + .card::after{opacity:1; transform:scale(1)}
+.gender .card{background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--c) 14%,var(--surface))); box-shadow:0 8px 16px -12px rgba(36,20,11,.5)}
+.gender .opt input:checked + .card{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 22%,var(--surface)),color-mix(in srgb,var(--c) 38%,var(--surface)))}
+button{box-shadow:0 12px 22px -12px var(--terra)}
+.col > :nth-child(6){animation-delay:.7s}
+.col > :nth-child(7){animation-delay:.85s}
+.pyr-wrap{margin-top:3.4rem}
+.pyr-title{font-family:var(--serif); font-weight:800; font-size:clamp(1.5rem,4.2vw,2.2rem); line-height:1.15; margin:0 0 .7rem}
+.pyr-intro{margin:0 0 1.8rem; color:var(--muted)}
+.pyr-axis{text-align:center; font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:.7rem 0}
+.pyr{display:flex; flex-direction:column; gap:4px; filter:drop-shadow(0 14px 16px rgba(36,20,11,.28))}
+.pyr .lv{display:flex; align-items:center; justify-content:center; min-height:3.7rem; color:var(--t,#24140B); background:linear-gradient(180deg,color-mix(in srgb,var(--c) 90%,#fff),var(--c))}
+.pyr .lv.gap{margin-top:.5rem}
+.pyr .lv span{width:calc(var(--w) * 1% - 2rem); text-align:center; font-size:clamp(.72rem,2.3vw,.95rem); font-weight:700; line-height:1.25}
+.pyr-note{margin-top:1.8rem; background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--terra); border-radius:1rem; padding:1.1rem 1.3rem; color:var(--muted); font-size:.95rem}
+.pyr-note b{color:var(--ink)}
+.pyr-q{margin:1.6rem 0 0; font-family:var(--serif); font-size:clamp(1.15rem,3vw,1.5rem); line-height:1.35; font-weight:500}
+.pyr-q em{font-style:italic; color:var(--terra)}
+.go{position:fixed; left:0; right:0; bottom:0; z-index:5; display:flex; justify-content:center; padding:1.4rem 1rem calc(env(safe-area-inset-bottom,0px) + 1.2rem); background:linear-gradient(to top,var(--bg) 55%,transparent); pointer-events:none}
+.go button{pointer-events:auto}
+.ghost{background:transparent; color:var(--ink); border:1.5px solid var(--line); box-shadow:none; padding:.9rem 1.6rem; font-size:.98rem}
+.again{display:flex; justify-content:center; margin-top:3.2rem; padding-bottom:4.5rem}
+.again button{font-size:1.2rem; padding:1.2rem 2.8rem; box-shadow:0 16px 28px -12px var(--terra)}
+
+.res{max-width:60rem; margin:0 auto}
+.res h1{font-size:clamp(2.4rem,8vw,5rem); margin:.6rem 0 1rem}
+.res .lead{margin-bottom:.8rem}
+.res .lead b{display:inline-grid; place-items:center; width:1.4rem; height:1.4rem; border-radius:50%; border:1px solid var(--line); background:var(--surface); font-family:var(--serif); font-style:italic; font-size:.9rem; line-height:1}
+.msg{color:var(--muted); font-size:.92rem; margin:1rem 0 0; padding:.8rem 1rem; border:1px solid var(--line); border-left:4px solid var(--gold); border-radius:.8rem; background:var(--surface)}
+.block{margin-top:2.6rem}
+.block h2{font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:.8rem; margin:0 0 1.6rem; font-weight:700}
+.block h2::after{content:""; flex:1; height:1px; background:var(--line)}
+.stage{display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:1.6rem 1.8rem}
+.bub{display:flex; flex-direction:column; align-items:center; gap:.7rem; text-align:center; animation:pop .8s cubic-bezier(.2,1.4,.4,1) both; animation-delay:var(--dl,0s)}
+.bub span{font-size:.85rem; font-weight:500; color:var(--muted); max-width:7rem; line-height:1.3}
+.orb{width:calc(3rem + var(--p,0) * (min(20vw,8rem) - 3rem)); aspect-ratio:1; border-radius:50%; background:var(--bg); position:relative; box-shadow:inset 0 0 0 1.5px rgba(128,128,128,.35), 0 18px 28px -16px rgba(36,20,11,.6); transition:width .8s ease; animation:bob 6s ease-in-out infinite; animation-delay:var(--dl,0s)}
+.orb::after{content:""; position:absolute; inset:0; border-radius:50%; background:radial-gradient(circle at 30% 22%,rgba(255,255,255,.38),transparent 55%)}
+.st-race .orb{width:calc(4.5rem + var(--p,0) * (min(28vw,13rem) - 4.5rem))}
+.st-race .bub span{font-family:var(--serif); font-size:1.3rem; font-weight:800; color:var(--ink)}
+.zero .orb{background:transparent; box-shadow:none; border:2px dashed var(--line); width:2.6rem !important; animation:none}
+.zero .orb::after{display:none}
+.zero span{opacity:.6}
+@keyframes pop{from{opacity:0; transform:scale(.3)} to{opacity:1; transform:scale(1)}}
+@keyframes bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}}
+.info{position:fixed; right:1.2rem; bottom:calc(env(safe-area-inset-bottom,0px) + 1.2rem); z-index:20; width:3rem; height:3rem; padding:0; border-radius:50%; background:var(--surface); color:var(--ink); border:1px solid var(--line); font-family:var(--serif); font-style:italic; font-size:1.4rem; font-weight:800; box-shadow:0 10px 22px -10px rgba(36,20,11,.6)}
+.modal{position:fixed; inset:0; z-index:30; display:grid; place-items:center; padding:1.2rem; background:rgba(20,13,8,.55); backdrop-filter:blur(4px)}
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:1.4rem; width:min(100%,30rem); max-height:85vh; overflow:auto; padding:1.5rem}
+.panel h3{font-family:var(--serif); font-weight:800; font-size:1.5rem; margin:0 0 .2rem}
+.panel h4{margin:1.4rem 0 .4rem; font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; color:var(--terra)}
+.panel .sub{margin:0; color:var(--muted); font-size:.92rem}
+.row{display:flex; align-items:center; gap:.7rem; padding:.45rem 0; border-bottom:1px solid var(--line); font-size:.95rem}
+.row i{width:.95rem; height:.95rem; border-radius:50%; background:var(--bg); box-shadow:inset 0 0 0 1.5px rgba(128,128,128,.4); flex:none}
+.row b{margin-left:auto}
+.close{margin-top:1.4rem; padding:.7rem 1.6rem; font-size:.95rem; box-shadow:none}
+@media (prefers-reduced-motion:reduce){.bub,.orb{animation:none}}
+.gender .dot{width:1.15rem; height:1.15rem; background:var(--d,linear-gradient(135deg,#E5484D 0%,#F08A3C 20%,#F2C744 40%,#4FA66A 60%,#4C8FD1 80%,#8A63C9 100%))}
+.gender .opt:last-child{grid-column:1/-1; justify-self:center; width:min(100%,24rem)}
+.gender .opt:last-child .card{justify-content:center; white-space:nowrap}
+.col{max-width:46rem; margin:0 auto; padding-top:1rem; padding-bottom:6rem}
+.col > *{animation:rise .7s both}
+.col > :nth-child(2){animation-delay:.1s}.col > :nth-child(3){animation-delay:.25s}.col > :nth-child(4){animation-delay:.4s}.col > :nth-child(5){animation-delay:.55s}
+.col h1{font-size:clamp(3.2rem,14vw,7.5rem); margin:.5rem 0 1.4rem}
+.spectrum{display:flex; gap:.4rem; margin:0 0 2.2rem}
+.spectrum span{flex:1; height:1.6rem; border-radius:999px; box-shadow:inset 0 0 0 1px rgba(128,128,128,.25)}
+.lede{margin:0; font-family:var(--serif); font-size:clamp(1.35rem,3.6vw,2rem); line-height:1.3; font-weight:500; padding-left:1.2rem; border-left:6px solid var(--terra); border-image:linear-gradient(var(--gold),var(--terra)) 1}
+.pair{display:grid; gap:1rem; margin-top:2rem; grid-template-columns:repeat(auto-fit,minmax(16rem,1fr))}
+.note{background:var(--surface); border:1px solid var(--line); border-radius:1.2rem; padding:1.3rem 1.4rem; box-shadow:0 12px 24px -16px rgba(36,20,11,.5)}
+.note small{display:block; font-size:.75rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--terra); margin-bottom:.6rem}
+.note p{margin:0}
+.places{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
+.places span{padding:.35rem .9rem; border-radius:999px; font-size:.85rem; font-weight:500; border:1px solid var(--line); background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--gold) 18%,var(--surface)))}
+@keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){.col > *{animation:none}}
+.actions{display:flex; align-items:center; gap:1rem; flex-wrap:wrap}
+button{
+  font:inherit; font-weight:700; font-size:1.05rem; padding:1rem 2rem; border:0; border-radius:999px; cursor:pointer;
+  background:linear-gradient(90deg,var(--terra),var(--gold)); color:var(--on-accent); transition:transform .15s, opacity .15s;
+}
+button:hover:not(:disabled){transform:translateY(-2px)}
+button:disabled{opacity:.4; cursor:not-allowed}
+.status{color:var(--muted); font-size:.92rem}
+.thanks{text-align:center; padding:clamp(2rem,6vw,4rem) 1rem}
+.thanks .mark{width:4.5rem; height:4.5rem; margin:0 auto 1.5rem}
+.thanks .mark::after{inset:1rem}
+.thanks p{color:var(--muted); max-width:30rem; margin:0 auto}
+[hidden]{display:none !important}
+footer{padding:1.5rem clamp(1.25rem,5vw,4rem); border-top:1px solid var(--line); display:flex; flex-wrap:wrap; justify-content:space-between; gap:.5rem; font-size:.85rem; color:var(--muted)}
+@media (max-width:520px){.date{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<div class="tape" aria-hidden="true"></div>
+<header>
+  <div class="date">20 de novembro</div>
+</header>
+<main>
+  <div class="wrap">
+    <section id="formView">
+      <span class="kicker">Dia da Consciência Negra</span>
+      <h1>Quem sou eu?<br><em>Minha identidade, minha voz.</em></h1>
+      <p class="lead">Escolha, em cada pergunta, a opção com a qual você se identifica. Não existe resposta certa ou errada.</p>
+
+      <div class="privacy" role="note">
+        <span aria-hidden="true">🔒</span>
+        <div><b>Pesquisa 100% anônima.</b> Não pedimos nome, turma, e-mail ou qualquer dado que identifique você. Responder é voluntário, e você pode escolher “Prefiro não responder”.</div>
+      </div>
+
+      <form id="form" novalidate>
+        <fieldset>
+          <legend><span class="num" aria-hidden="true">1</span>Com qual cor ou raça você se identifica?</legend>
+          <div class="grid race">
+            <label class="opt" style="--g:linear-gradient(145deg,#FCE8D5,#F1C9A5 55%,#E3B088);--t:#3A2212;--c:#E3B088"><input type="radio" name="raca" value="branco"><span class="card"><span class="dot"></span>Branco(a)</span></label>
+            <label class="opt" style="--g:linear-gradient(145deg,#EBC49C,#D2A074 55%,#B98558);--t:#24140B;--c:#D2A074"><input type="radio" name="raca" value="pardo"><span class="card"><span class="dot"></span>Pardo(a)</span></label>
+            <label class="opt" style="--g:linear-gradient(145deg,#E3B995,#B58459 28%,#7A4E32 55%,#3E2415 80%,#1B0F08);--t:#FBF0DE;--c:#7A4E32"><input type="radio" name="raca" value="negro"><span class="card"><span class="dot"></span>Negro(a)</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span class="num" aria-hidden="true">2</span>Com qual identidade de gênero você se identifica?</legend>
+          <div class="grid gender">
+            <label class="opt" style="--c:#3A2A20;--d:#0E0E0E"><input type="radio" name="genero" value="homem-cis"><span class="card"><span class="dot"></span>Homem cis</span></label>
+            <label class="opt" style="--c:#B8AB9A;--d:#FFFFFF"><input type="radio" name="genero" value="mulher-cis"><span class="card"><span class="dot"></span>Mulher cis</span></label>
+            <label class="opt" style="--c:#D94F4F"><input type="radio" name="genero" value="bissexual"><span class="card"><span class="dot"></span>Bissexual</span></label>
+            <label class="opt" style="--c:#E26D3D"><input type="radio" name="genero" value="gay"><span class="card"><span class="dot"></span>Gay</span></label>
+            <label class="opt" style="--c:#EA9A3A"><input type="radio" name="genero" value="lesbica"><span class="card"><span class="dot"></span>Lésbica</span></label>
+            <label class="opt" style="--c:#E9C23A"><input type="radio" name="genero" value="homem-trans"><span class="card"><span class="dot"></span>Homem trans</span></label>
+            <label class="opt" style="--c:#9BBF4A"><input type="radio" name="genero" value="mulher-trans"><span class="card"><span class="dot"></span>Mulher trans</span></label>
+            <label class="opt" style="--c:#4FA66A"><input type="radio" name="genero" value="travesti"><span class="card"><span class="dot"></span>Travesti</span></label>
+            <label class="opt" style="--c:#3FA39B"><input type="radio" name="genero" value="nao-binarie"><span class="card"><span class="dot"></span>Pessoa não binária</span></label>
+            <label class="opt" style="--c:#4C8FD1"><input type="radio" name="genero" value="genero-fluido"><span class="card"><span class="dot"></span>Gênero fluido</span></label>
+            <label class="opt" style="--c:#6D6FC9"><input type="radio" name="genero" value="agenero"><span class="card"><span class="dot"></span>Agênero</span></label>
+            <label class="opt" style="--c:#9A5FB8"><input type="radio" name="genero" value="outra"><span class="card"><span class="dot"></span>Outra identidade</span></label>
+            <label class="opt" style="--c:var(--muted);--d:var(--muted)"><input type="radio" name="genero" value="nao-responder"><span class="card"><span class="dot"></span>Prefiro não responder</span></label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit" id="send" disabled>Enviar minha resposta</button>
+          <span class="status" id="status" aria-live="polite">Responda às duas perguntas para enviar.</span>
+        </div>
+      </form>
+    </section>
+
+    <section id="thanksView" class="col" hidden>
+      <span class="kicker">Agora, uma reflexão sobre desigualdades</span>
+      <h1><em>Colorismo</em></h1>
+      <div class="spectrum" aria-hidden="true"><span style="background:#F1C9A5"></span><span style="background:#D9A066"></span><span style="background:#B9773F"></span><span style="background:#8D5524"></span><span style="background:#5E3A1E"></span><span style="background:#3B2112"></span><span style="background:#24140B"></span></div>
+      <p class="lede">O colorismo é uma forma de discriminação baseada na tonalidade da pele e em características físicas associadas à negritude.</p>
+      <div class="pair">
+        <div class="note"><small>Na prática</small><p>Em sociedades marcadas pelo racismo, pessoas negras de pele mais clara podem receber tratamentos diferentes daqueles direcionados a pessoas negras de pele mais escura.</p></div>
+        <div class="note"><small>Onde acontece</small><p>Isso pode ocorrer em espaços escolares, no mercado de trabalho, na mídia e nas relações sociais.</p><div class="places" aria-hidden="true"><span>Escola</span><span>Trabalho</span><span>Mídia</span><span>Relações sociais</span></div></div>
+      </div>
+      <div class="pyr-wrap">
+        <h2 class="pyr-title">Pirâmide social de gênero e raça</h2>
+        <p class="pyr-intro">Raça e gênero se combinam e, ao longo da história, produzem condições muito diferentes de acesso a educação, trabalho, renda, segurança e reconhecimento. Esta pirâmide representa essa estrutura de desigualdades.</p>
+        <div class="pyr-axis">↑ Maior acesso histórico a oportunidades e reconhecimento</div>
+        <div class="pyr" role="list">
+          <div class="lv" role="listitem" style="--c:#FCE8D5;--w:39.5;clip-path:polygon(32% 0,68% 0,71.55% 100%,28.45% 100%)"><span>Homem branco</span></div>
+          <div class="lv" role="listitem" style="--c:#F5D5B8;--w:46.6;clip-path:polygon(28.45% 0,71.55% 0,75.1% 100%,24.9% 100%)"><span>Mulher branca</span></div>
+          <div class="lv" role="listitem" style="--c:#E3B088;--w:53.7;clip-path:polygon(24.9% 0,75.1% 0,78.65% 100%,21.35% 100%)"><span>Pessoas brancas de outras identidades de gênero</span></div>
+          <div class="lv gap" role="listitem" style="--c:#EBC49C;--w:60.8;clip-path:polygon(21.35% 0,78.65% 0,82.2% 100%,17.8% 100%)"><span>Homem pardo</span></div>
+          <div class="lv" role="listitem" style="--c:#D2A074;--w:68;clip-path:polygon(17.8% 0,82.2% 0,85.8% 100%,14.2% 100%)"><span>Mulher parda</span></div>
+          <div class="lv" role="listitem" style="--c:#B98558;--w:75.1;clip-path:polygon(14.2% 0,85.8% 0,89.35% 100%,10.65% 100%)"><span>Pessoas pardas de outras identidades de gênero</span></div>
+          <div class="lv gap" role="listitem" style="--c:#C99A72;--w:82.2;clip-path:polygon(10.65% 0,89.35% 0,92.9% 100%,7.1% 100%)"><span>Homem negro</span></div>
+          <div class="lv" role="listitem" style="--c:#7A4E32;--t:#FBF0DE;--w:89.3;clip-path:polygon(7.1% 0,92.9% 0,96.45% 100%,3.55% 100%)"><span>Mulher negra</span></div>
+          <div class="lv" role="listitem" style="--c:#2E1A0F;--t:#FBF0DE;--w:96.4;clip-path:polygon(3.55% 0,96.45% 0,100% 100%,0 100%)"><span>Pessoas negras de outras identidades de gênero</span></div>
+        </div>
+        <div class="pyr-axis">↓ Maior exposição a barreiras estruturais</div>
+        <div class="pyr-note"><b>Importante:</b> esta pirâmide mostra desigualdades estruturais, construídas ao longo da história pelo racismo, pelo colorismo e pelas desigualdades de gênero. Ela não é uma classificação do valor das pessoas: todas têm a mesma dignidade e os mesmos direitos.</div>
+        <p class="pyr-q">Para refletir: <em>de que formas essas desigualdades podem influenciar as oportunidades, o reconhecimento e a posição social de alguém?</em></p>
+      </div>
+      <div class="go"><button type="button" id="toResults">Ver os resultados →</button></div>
+    </section>
+
+    <section id="resultsView" class="res" hidden>
+      <span class="kicker">Nossa turma</span>
+      <h1>Somos <em>muitas identidades.</em></h1>
+      <p class="lead">Cada círculo representa um grupo: quanto maior ele é, mais pessoas se identificam com ele. Para ver os números exatos, toque no <b>i</b>.</p>
+      <p class="msg" id="msg" hidden>Não foi possível carregar os resultados neste acesso.</p>
+      <p class="msg" id="note" hidden>Sua resposta não pôde ser registrada neste acesso, por isso pode não aparecer nos resultados.</p>
+      <p class="msg" id="empty" hidden>Ainda não há respostas registradas.</p>
+      <div id="stages">
+        <div class="block"><h2>Cor ou raça</h2><div class="stage st-race" id="stRace"></div></div>
+        <div class="block"><h2>Identidade de gênero</h2><div class="stage" id="stGen"></div></div>
+      </div>
+      <div class="again"><button type="button" data-new>Enviar nova resposta</button></div>
+      <button type="button" class="info" id="infoBtn" aria-label="Ver números exatos" title="Ver números exatos">i</button>
+      <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+        <div class="panel">
+          <h3 id="mTitle">Números exatos</h3>
+          <p class="sub" id="mTotal"></p>
+          <h4>Cor ou raça</h4><div id="lRace"></div>
+          <h4>Identidade de gênero</h4><div id="lGen"></div>
+          <button type="button" class="close" id="mClose">Fechar</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <span>Evento da Consciência Negra</span>
+  <span>Cada identidade importa.</span>
+</footer>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot, query, limit } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDz-LUOssFEmb8LiuK5nIow8FffBFL8I1c",
+  authDomain: "consciencia-f19f9.firebaseapp.com",
+  projectId: "consciencia-f19f9",
+  storageBucket: "consciencia-f19f9.firebasestorage.app",
+  messagingSenderId: "177567243282",
+  appId: "1:177567243282:web:b55cb1b8fe88a32d650ccb"
+};
+/* Sem Analytics de propósito: a pesquisa é anônima e não coleta dados de uso. */
+const fdb = getFirestore(initializeApp(firebaseConfig));
+const respostas = collection(fdb, "respostas");
+const fs = {
+  add: (a) => addDoc(respostas, a),
+  watch: (ok, err) => onSnapshot(query(respostas, limit(1000)), ok, err)
+};
+
+(function(){
+  var form=document.getElementById('form'), send=document.getElementById('send'), status=document.getElementById('status');
+  function ready(){
+    return form.querySelector('input[name="raca"]:checked') && form.querySelector('input[name="genero"]:checked');
+  }
+  form.addEventListener('change',function(){
+    var ok=!!ready();
+    send.disabled=!ok;
+    status.textContent=ok?'Tudo pronto!':'Responda às duas perguntas para enviar.';
+  });
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!ready()) return;
+    answer={raca:form.querySelector('input[name="raca"]:checked').value, genero:form.querySelector('input[name="genero"]:checked').value};
+    saveAnswer(answer);
+    form.reset();
+    document.getElementById('formView').hidden=true;
+    document.getElementById('thanksView').hidden=false;
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var answer=null, writeFailed=false, built=false, orbsR=[], orbsG=[], lastFocus=null;
+  var dbp=Promise.resolve(fs);
+  var writeP=Promise.resolve();
+  function $(id){return document.getElementById(id)}
+  /* Resposta anônima: apenas cor/raça e gênero, com id automático. Sem nome, turma, data/hora ou identificador do aluno. */
+  function saveAnswer(a){
+    writeP=dbp.then(function(db){
+      if(!db){writeFailed=true;return;}
+      return db.add(a);
+    }).catch(function(){writeFailed=true;});
+  }
+  var RB='linear-gradient(135deg,#E5484D 0%,#F08A3C 20%,#F2C744 40%,#4FA66A 60%,#4C8FD1 80%,#8A63C9 100%)';
+  var RACAS=[
+    {k:'branco',l:'Branco(a)',g:'linear-gradient(145deg,#FCE8D5,#F1C9A5 55%,#E3B088)'},
+    {k:'pardo',l:'Pardo(a)',g:'linear-gradient(145deg,#EBC49C,#D2A074 55%,#B98558)'},
+    {k:'negro',l:'Negro(a)',g:'linear-gradient(145deg,#E3B995,#B58459 28%,#7A4E32 55%,#3E2415 80%,#1B0F08)'}
+  ];
+  var GEN=[
+    {k:'homem-cis',l:'Homem cis',g:'#0E0E0E'},{k:'mulher-cis',l:'Mulher cis',g:'#FFFFFF'},
+    {k:'bissexual',l:'Bissexual'},{k:'gay',l:'Gay'},{k:'lesbica',l:'Lésbica'},
+    {k:'homem-trans',l:'Homem trans'},{k:'mulher-trans',l:'Mulher trans'},{k:'travesti',l:'Travesti'},
+    {k:'nao-binarie',l:'Pessoa não binária'},{k:'genero-fluido',l:'Gênero fluido'},{k:'agenero',l:'Agênero'},
+    {k:'outra',l:'Outra identidade'},{k:'nao-responder',l:'Prefiro não responder',g:'#8A7F76'}
+  ];
+  function build(el,list,store){
+    list.forEach(function(it,i){
+      var b=document.createElement('div'); b.className='bub zero'; b.style.setProperty('--dl',(i*0.08)+'s');
+      var o=document.createElement('div'); o.className='orb'; o.style.setProperty('--bg',it.g||RB); o.style.setProperty('--p',0);
+      var s=document.createElement('span'); s.textContent=it.l;
+      b.appendChild(o); b.appendChild(s); el.appendChild(b); store.push({b:b,o:o,k:it.k});
+    });
+  }
+  function paint(store,counts){
+    var max=0; store.forEach(function(x){max=Math.max(max,counts[x.k]||0)});
+    store.forEach(function(x){var n=counts[x.k]||0; x.b.classList.toggle('zero',!n); x.o.style.setProperty('--p',max?Math.sqrt(n/max).toFixed(3):0);});
+  }
+  function fillList(el,list,counts){
+    el.innerHTML='';
+    list.forEach(function(it){
+      var r=document.createElement('div'); r.className='row';
+      var d=document.createElement('i'); d.style.setProperty('--bg',it.g||RB);
+      var t=document.createElement('span'); t.textContent=it.l;
+      var n=document.createElement('b'); n.textContent=String(counts[it.k]||0);
+      r.appendChild(d); r.appendChild(t); r.appendChild(n); el.appendChild(r);
+    });
+  }
+  function render(snap){
+    var cr={}, cg={}, total=0;
+    snap.docs.forEach(function(d){
+      var x=d.data()||{};
+      var okR=RACAS.some(function(r){return r.k===x.raca}), okG=GEN.some(function(g){return g.k===x.genero});
+      if(!okR&&!okG) return;
+      total++;
+      if(okR) cr[x.raca]=(cr[x.raca]||0)+1;
+      if(okG) cg[x.genero]=(cg[x.genero]||0)+1;
+    });
+    paint(orbsR,cr); paint(orbsG,cg);
+    fillList($('lRace'),RACAS,cr); fillList($('lGen'),GEN,cg);
+    $('mTotal').textContent='Total de respostas: '+total;
+    $('empty').hidden=total>0;
+  }
+  function fail(){ $('stages').hidden=true; $('infoBtn').hidden=true; $('empty').hidden=true; $('note').hidden=true; $('msg').hidden=false; }
+  function showResults(){
+    $('thanksView').hidden=true; $('resultsView').hidden=false;
+    window.scrollTo({top:0,behavior:'smooth'});
+    if(built) return; built=true;
+    build($('stRace'),RACAS,orbsR); build($('stGen'),GEN,orbsG);
+    dbp.then(function(db){
+      if(!db){fail();return;}
+      db.watch(render,fail);
+    }).catch(fail);
+    writeP.then(function(){ if(writeFailed && $('msg').hidden) $('note').hidden=false; });
+  }
+  function openM(){ lastFocus=document.activeElement; $('modal').hidden=false; $('mClose').focus(); }
+  function closeM(){ $('modal').hidden=true; if(lastFocus&&lastFocus.focus) lastFocus.focus(); }
+  function newResponse(){
+    answer=null; writeFailed=false; $('note').hidden=true;
+    $('thanksView').hidden=true; $('resultsView').hidden=true; $('modal').hidden=true;
+    form.reset(); send.disabled=true; status.textContent='Responda às duas perguntas para enviar.';
+    $('formView').hidden=false;
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-new]'),function(b){b.addEventListener('click',newResponse)});
+  $('toResults').addEventListener('click',showResults);
+  $('infoBtn').addEventListener('click',openM);
+  $('mClose').addEventListener('click',closeM);
+  $('modal').addEventListener('click',function(e){ if(e.target===this) closeM(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !$('modal').hidden) closeM(); });
+})();
+</script>
+</body>
+</html>
